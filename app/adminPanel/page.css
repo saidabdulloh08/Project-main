@@ -1,7 +1,6 @@
-
 .admin-container,
 .admin-auth-container {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   padding: 2rem;
   min-height: 100vh;
   transition: background-color 0.3s, color 0.3s;
@@ -17,7 +16,6 @@
   background-color: var(--bg-secondary);
   color: var(--text-color);
 }
-
 
 .admin-header {
   display: flex;
@@ -45,6 +43,7 @@
 }
 
 .btn-primary {
+  display: block;
   background-color: var(--icp-primary);
   color: white;
 }
@@ -81,7 +80,6 @@
 .btn-danger:hover {
   background-color: #dc2626;
 }
-
 
 .tab-container {
   display: flex;
@@ -129,17 +127,19 @@
   background-color: var(--bg-secondary);
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: rgba(0,0,0,0.1) 0px 4px 12px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   margin-bottom: 1.5rem;
   transition: all 0.3s ease;
+}
+.formcha {
+  width: 450px;
 }
 
 .admin-card:hover,
 .auth-card:hover {
   transform: translateY(-3px);
-  box-shadow: rgba(0,0,0,0.15) 0px 6px 18px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 6px 18px;
 }
-
 
 .input-group {
   display: flex;
@@ -155,16 +155,18 @@
 .input-field {
   padding: 0.5rem 0.8rem;
   border-radius: 6px;
+  width: 400px;
   border: 1px solid #d1d5db;
   font-size: 0.95rem;
   transition: border-color 0.3s;
+  margin-top: 0px;
+  margin-bottom: 20px;
 }
 
 .input-field:focus {
   border-color: var(--icp-primary);
   outline: none;
 }
-
 
 textarea.input-field {
   resize: vertical;
@@ -181,7 +183,6 @@ textarea.input-field {
 select.input-field {
   max-width: 120px;
 }
-
 
 .save-message {
   background-color: #10b981;
@@ -228,18 +229,80 @@ select.input-field {
 }
 
 /* Responsive */
+@media (max-width: 992px) {
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
 @media (max-width: 768px) {
-  .tab-container,
+  .admin-container,
+  .admin-auth-container {
+    padding: 1rem;
+  }
+
+  .admin-title {
+    font-size: 1.4rem;
+  }
+
+  .input-field {
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    width: 400px;
+    border: 1px solid #d1d5db;
+    font-size: 0.95rem;
+    transition: border-color 0.3s;
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+
+  .formcha {
+    width: 100%;
+    max-width: 100%;
+  }
+
   .content-tab-btn {
-    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
   }
 
   .comment-item {
     flex-direction: column;
     align-items: flex-start;
   }
+}
 
-  .comment-actions {
-    margin-top: 0.5rem;
+@media (max-width: 480px) {
+  .admin-header {
+    text-align: center;
+    align-items: center;
+  }
+
+  .btn-primary,
+  .btn-secondary,
+  .btn-success,
+  .btn-danger {
+    width: 100%;
+  }
+  .formcha {
+    width: 100%;
+    max-width: 320px;
+  }
+  .tab-btn {
+    flex: 1 1 100%;
+  }
+  .input-field {
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    width: 290px;
+    border: 1px solid #d1d5db;
+    font-size: 0.95rem;
+    transition: border-color 0.3s;
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+  .content-tab-btn {
+    flex: 1 1 100%;
+    width: 100%;
   }
 }

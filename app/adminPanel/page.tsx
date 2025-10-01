@@ -310,7 +310,7 @@ export default function AdminPanelPage() {
       <div className={`admin-auth-container ${isDarkMode ? 'dark-mode' : ''}`}>
         <div className="admin-card auth-card">
           <h2 className="admin-title">Admin Panelga Kirish</h2>
-          <form onSubmit={handleLogin}>
+          <form onSubmit={handleLogin} className='formcha'>
             <input type="text" placeholder="Login" value={loginInput} onChange={(e) => setLoginInput(e.target.value)} className="input-field" required />
             <input type="password" placeholder="Parol" value={passwordInput} onChange={(e) => setPasswordInput(e.target.value)} className="input-field" required />
             {loginError && <p className="error-message">{loginError}</p>}

@@ -25,7 +25,7 @@ export default function CommentsComponent() {
       return;
     }
     addComment(name, text);
-    setMessage("✅ Izohingiz qabul qilindi! Admin tomonidan tasdiqlangandan so'ng saytda ko'rinadi.");
+    setMessage("✅ Izohingiz qabul qilindi!");
     setName('');
     setText('');
     setTimeout(() => setMessage(''), 5000);
@@ -43,7 +43,7 @@ export default function CommentsComponent() {
             comments.map(c => (
               <div key={c.id} className="comment-item">
                 <p className="comment-name">{c.name}</p>
-                <p className="comment-text">"{c.text}"</p>
+                <p className="comment-text">{c.text}</p>
               </div>
             ))
           )}
@@ -53,11 +53,11 @@ export default function CommentsComponent() {
         <form onSubmit={handleSubmit} className="card comment-form">
           <h3>Fikr Qoldirish</h3>
           <div className="form-group">
-            <label htmlFor="name">Ismingiz</label>
+            <label htmlFor="name">Ismingizni kiriting</label>
             <input id="name" type="text" value={name} onChange={(e) => setName(e.target.value)} className="input-field" required />
           </div>
           <div className="form-group">
-            <label htmlFor="comment">Izohingiz</label>
+            <label htmlFor="comment">Izoh qoldirish</label>
             <textarea id="comment" value={text} onChange={(e) => setText(e.target.value)} rows={4} className="input-field" required />
           </div>
           <button type="submit" className="btn-primary">Yuborish</button>
