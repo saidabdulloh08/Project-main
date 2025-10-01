@@ -1,0 +1,201 @@
+/* Header asosiy konteyner */
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-color);
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Ichki container */
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo qismi */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.logo-tagline {
+  font-size: 0.75rem;
+  color: var(--icp-accent);
+  line-height: 1;
+}
+
+/* Navigatsiya linklari (desktop) */
+.nav-links-desktop {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--icp-accent);
+}
+
+/* Controls (til va tema tugmalari) */
+.controls-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lang-select {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-primary);
+  color: var(--text-color);
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Mobil menyu tugmasi */
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: block;
+  transition: transform 0.2s;
+}
+
+.menu-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Mobil menyu */
+.mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out, background-color 0.3s;
+  background-color: var(--bg-secondary);
+}
+
+.mobile-menu.open {
+  max-height: 500px;
+}
+
+.nav-link-mobile {
+  display: block;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-color);
+  transition: color 0.3s;
+}
+
+.nav-link-mobile:hover {
+  color: var(--icp-accent);
+}
+
+.admin-link-mobile {
+  font-weight: 700;
+  color: var(--icp-primary);
+  border-bottom: none;
+  margin-top: 0.5rem;
+}
+
+
+/* Til select asosiy stil */
+.lang-select {
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-primary);
+  color: var(--text-color);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  appearance: none; /* default browser arrow ni olib tashlaydi */
+  position: relative;
+}
+
+/* Dark mode uchun */
+body.dark .lang-select {
+  background-color: var(--bg-secondary);
+  color: var(--text-color);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* Desktop arrow (optional, custom) */
+.lang-select::after {
+  content: "▼";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 0.7rem;
+  color: var(--text-color);
+}
+
+/* Dark mode arrow color */
+body.dark .lang-select::after {
+  color: #f9fafb;
+}
+
+/* Optionlar stillari (browser dependent) */
+.lang-select option {
+  background-color: var(--bg-primary);
+  color: var(--text-color);
+}
+
+body.dark .lang-select option {
+  background-color: var(--bg-secondary);
+  color: var(--text-color);
+}
+
+/* Hover va focus effektlari */
+.lang-select:hover, .lang-select:focus {
+  border-color: var(--icp-accent);
+  outline: none;
+  box-shadow: 0 0 5px rgba(3,169,244,0.5);
+}
+
+
+/* Responsive */
+@media (min-width: 768px) {
+  .nav-links-desktop {
+    display: flex;
+  }
+  .menu-toggle {
+    display: none;
+  }
+}
