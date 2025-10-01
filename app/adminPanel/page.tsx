@@ -133,7 +133,7 @@ export default function AdminPanelPage() {
     const aboutContent = contentDraft[editingLang].about;
     return (
       <>
-        <h3 className="admin-subtitle">About bo'limi</h3>
+        <h3 className="admin-subtitle">About boʻlimi</h3>
         <div className="input-group">
           <label>Sarlavha</label>
           <input
@@ -175,7 +175,7 @@ export default function AdminPanelPage() {
     const servicesContent = contentDraft[editingLang].services;
     return (
       <>
-        <h3 className="admin-subtitle">Services bo'limi</h3>
+        <h3 className="admin-subtitle">Services bolimi</h3>
         <div className="input-group">
           <label>Sarlavha</label>
           <input
@@ -217,7 +217,7 @@ export default function AdminPanelPage() {
     const portfolioContent = contentDraft[editingLang].portfolio;
     return (
       <>
-        <h3 className="admin-subtitle">Portfolio bo'limi</h3>
+        <h3 className="admin-subtitle">Portfolio boʻlimi</h3>
         <div className="input-group">
           <label>Sarlavha</label>
           <input
@@ -373,7 +373,7 @@ export default function AdminPanelPage() {
                     <div className="comment-details">
                       <p><strong>Foydalanuvchi:</strong> {comment.name}</p>
                       <p><strong>Sana:</strong> {new Date(comment.timestamp).toLocaleString()}</p>
-                      <p className="comment-text">"{comment.text}"</p>
+                      <p className="comment-text">{comment.text}</p>
                     </div>
                     <div className="comment-actions">
                       <button onClick={() => handleCommentAction(comment.id, 'approve')} className="btn-success">Tasdiqlash</button>
